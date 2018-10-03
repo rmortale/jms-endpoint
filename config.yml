@@ -1,0 +1,9 @@
+logging:
+  level: INFO
+  loggers:
+    ch.dulce.dw: DEBUG
+
+activeMQ:
+  brokerUrl: ${BROKER_URL:-tcp://localhost:61616}
+
+queueName: animalQueue
