@@ -4,6 +4,6 @@ COPY src /tmp/src/
 WORKDIR /tmp/
 RUN mvn package
 
-FROM openjdk:3.6.1-jdk-8-alpine
+FROM openjdk:8-jre-alpine
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/*.jar /app.jar
 CMD ["java", "-jar", "app.jar"]
