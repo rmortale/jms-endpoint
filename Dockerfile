@@ -5,5 +5,5 @@ WORKDIR /tmp/
 RUN mvn package
 
 FROM openjdk:8-jre-alpine
-COPY --from=MAVEN_TOOL_CHAIN /tmp/target/*.jar /app.jar
+COPY --from=MAVEN_TOOL_CHAIN /tmp/target/*shaded.jar app.jar
 CMD ["java", "-jar", "app.jar"]
