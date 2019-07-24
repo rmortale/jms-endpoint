@@ -8,4 +8,6 @@ RUN mvn package
 FROM openjdk:8-jre-alpine
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/jms-endpoint-1.0.1.jar app.jar
 COPY --from=MAVEN_TOOL_CHAIN /tmp/config.yml config.yml
-ENTRYPOINT ["java", "-jar", "app.jar", "server", "config.yml"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+CMD ["server", "config.yml"]
